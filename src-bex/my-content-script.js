@@ -4,24 +4,7 @@
 // More info: https://quasar.dev/quasar-cli/developing-browser-extensions/content-hooks
 import { bexContent } from 'quasar/wrappers'
 
-const
-  iFrame = document.createElement('iframe'),
-  defaultFrameHeight = '480px'
-
-/**
- * Set the height of our iFrame housing our BEX
- * @param height
- */
-const setIFrameHeight = height => {
-  iFrame.height = height
-}
-
-/**
- * Reset the iFrame to its default height e.g The height of the top bar.
- */
-const resetIFrameHeight = () => {
-  setIFrameHeight(defaultFrameHeight)
-}
+const iFrame = document.createElement('iframe');
 
 /**
  * The code below will get everything going. Initialize the iFrame with defaults and add it to the page.
@@ -29,7 +12,7 @@ const resetIFrameHeight = () => {
  */
 iFrame.id = 'bex-app-iframe'
 iFrame.width = '100%'
-resetIFrameHeight()
+iFrame.height = '100%'
 
 // Assign some styling so it looks seamless
 Object.assign(iFrame.style, {
@@ -41,12 +24,17 @@ Object.assign(iFrame.style, {
   border: '0',
   zIndex: '9999999', // Make sure it's on top
   overflow: 'visible',
-  transform: 'translateY(-50%)'
+  transform: 'translateY(-50%)',
+  pointerEvent: 'none'
 })
 
 ;(function () {
+  const w = document.documentElement.clientWidth;
+  const h = document.documentElement.clientHeight;
   // When the page loads, insert our browser extension app.
   iFrame.src = chrome.runtime.getURL('www/index.html#/main')
+  // iFrame.style.width = w + 'px';
+  // iFrame.style.height = h + 'px';
   document.body.prepend(iFrame)
 })()
 
