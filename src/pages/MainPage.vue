@@ -1,6 +1,6 @@
 <template>
-  <div class="ss-w-[100vw] ss-h-[100vh] ss-flex ss-flex-col ss-justify-center ss-items-center">
-    <div class="ss-w-full ss-flex ss-flex-col ss-rounded-[10px] ss-py-[10px] ss-items-center ss-bg-[rgba(255,255,255,.9)] ss-max-w-[1024px] ss-mx-auto ss-max-[1024px]:ss-mx-[10px] backdrop-blur-[24px]">
+  <div class="ss-w-[100vw] ss-h-[100vh] ss-box-border ss-flex ss-flex-col ss-justify-center ss-items-center ss-px-[10px]">
+    <div class="ss-w-full ss-flex ss-flex-col ss-rounded-[10px] ss-py-[10px] ss-items-center ss-bg-[rgba(255,255,255,.9)] ss-max-w-[1024px] ss-mx-auto backdrop-blur-[24px] ss-shadow-[0_0_25px_rgba(0,0,0,.3)]">
       <div class="ss-w-full ss-flex ss-flex-row ss-items-center ss-px-[10px]">
         <q-select
           filled
