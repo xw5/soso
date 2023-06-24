@@ -32,10 +32,10 @@ Object.assign(iFrame.style, {
   const w = document.documentElement.clientWidth;
   const h = document.documentElement.clientHeight;
   // When the page loads, insert our browser extension app.
-  iFrame.src = chrome.runtime.getURL('www/index.html#/main')
+  iFrame.src = chrome.runtime.getURL('www/index.html#/main');
   // iFrame.style.width = w + 'px';
   // iFrame.style.height = h + 'px';
-  document.body.prepend(iFrame)
+  document.body.prepend(iFrame);
 })()
 
 export default bexContent((bridge) => {

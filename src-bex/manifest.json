@@ -28,7 +28,7 @@
 
   "content_scripts": [
     {
-      "matches": [ "*://*/*" ],
+      "matches": [ "*://www.baidu.com/*" ],
       "css": [ "assets/content.css" ],
       "js": [ "my-content-script.js" ]
     }
